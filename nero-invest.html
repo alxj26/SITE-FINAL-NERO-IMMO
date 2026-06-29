@@ -25,7 +25,7 @@
 
   header{border-bottom:1px solid var(--line);background:rgba(8,9,13,.8);backdrop-filter:blur(14px);position:sticky;top:0;z-index:40}
   .hd{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px}
-  .logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em}
+  .logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;color:var(--text)}
   .logo .hex{font-size:21px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .logo small{font-family:var(--body);font-weight:500;font-size:12px;color:var(--muted);margin-left:2px}
   .badge-pro{font-family:var(--mono);font-size:11px;color:var(--sky);border:1px solid rgba(56,189,248,.3);padding:5px 10px;border-radius:7px;background:rgba(56,189,248,.06)}
@@ -135,7 +135,7 @@
 <body>
 <header>
   <div class="hd">
-    <div class="logo"><span class="hex">&#11041;</span>N&eacute;ro <small>Invest</small></div>
+    <a href="index.html" class="logo"><span class="hex">&#11041;</span>N&eacute;ro <small>Invest</small></a>
     <div class="badge-pro">&#11041; N&Eacute;RO SCORE</div>
   </div>
 </header>
@@ -286,7 +286,7 @@
       <div class="cta">
         <h3>Garde tous tes biens au m&ecirc;me endroit</h3>
         <p>Multi-projets, historique, export PDF, suivi de portefeuille &mdash; avec N&eacute;ro Invest &agrave; 9&euro;/mois.</p>
-        <button class="btn" onclick="alert('D&eacute;mo : abonnement N&eacute;ro Invest 9&euro;/mois')">Passer &agrave; N&eacute;ro Invest</button>
+        <a href="nero-checkout.html?plan=invest"><button class="btn">Passer &agrave; N&eacute;ro Invest</button></a>
       </div>
 
       <div class="legal">
@@ -415,7 +415,7 @@
       <div class="cta">
         <h3>Compare direct, SCPI et assurance-vie</h3>
         <p>N&eacute;ro Invest analyse toutes tes options patrimoniales au m&ecirc;me endroit &mdash; 9&euro;/mois.</p>
-        <button class="btn" onclick="alert('D&eacute;mo : abonnement N&eacute;ro Invest 9&euro;/mois')">Passer &agrave; N&eacute;ro Invest</button>
+        <a href="nero-checkout.html?plan=invest"><button class="btn">Passer &agrave; N&eacute;ro Invest</button></a>
       </div>
 
       <div class="legal">

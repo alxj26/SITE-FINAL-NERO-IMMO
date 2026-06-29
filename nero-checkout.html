@@ -23,7 +23,7 @@
 
   header{border-bottom:1px solid var(--line)}
   .hd{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:980px;margin:0 auto;padding:0 24px}
-  .logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em}
+  .logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;color:var(--text)}
   .logo .hex{font-size:21px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .secure{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;font-family:var(--mono)}
 
@@ -96,7 +96,7 @@
 <body>
 <header>
   <div class="hd">
-    <div class="logo"><span class="hex">&#11041;</span>N&eacute;ro</div>
+    <a href="index.html" class="logo"><span class="hex">&#11041;</span>N&eacute;ro</a>
     <div class="secure">&#128274; Paiement s&eacute;curis&eacute; &middot; Stripe</div>
   </div>
 </header>
@@ -216,22 +216,28 @@ const meta={
   invest_year:{ico:'&#11088;',title:'N\u00e9ro Invest annuel',desc:'Abonnement annuel, 2 mois offerts. Facturation une fois par an, renouvellement automatique.',guarantee:'2 mois offerts vs mensuel. R\u00e9siliable avant renouvellement. Rembours\u00e9 sous 14 jours si non utilis\u00e9.',btn:'S\u2019abonner \u2014 99 \u20ac/an',sub:'99,00 \u20ac/an',tot:'99,00 \u20ac',okTitle:'Abonnement annuel actif !',okDesc:'Bienvenue dans N\u00e9ro Invest. Tu es tranquille pour un an, tous les outils sont d\u00e9bloqu\u00e9s.',dl:'\u2192 Acc\u00e9der aux outils'}
 };
 
-plansEl.querySelectorAll('.plan').forEach(p=>{
-  p.onclick=()=>{
-    plansEl.querySelectorAll('.plan').forEach(x=>x.classList.remove('sel'));
-    p.classList.add('sel');
-    cur={plan:p.dataset.plan,amount:+p.dataset.amount,mode:p.dataset.mode};
-    const m=meta[cur.plan];
-    document.getElementById('sumIco').innerHTML=m.ico;
-    document.getElementById('sumTitle').innerHTML=m.title;
-    document.getElementById('sumDesc').innerHTML=m.desc;
-    document.getElementById('sumSub').innerHTML=m.sub;
-    document.getElementById('sumTot').innerHTML=m.tot;
-    document.getElementById('guaranteeTxt').innerHTML=m.guarantee;
-    document.getElementById('payBtn').innerHTML=m.btn;
-    document.getElementById('sumTva').innerHTML=cur.mode==='once'?'incluse':'incluse';
-  };
-});
+function selectPlan(planKey){
+  const p=plansEl.querySelector(`.plan[data-plan="${planKey}"]`);
+  if(!p)return;
+  plansEl.querySelectorAll('.plan').forEach(x=>x.classList.remove('sel'));
+  p.classList.add('sel');
+  cur={plan:p.dataset.plan,amount:+p.dataset.amount,mode:p.dataset.mode};
+  const m=meta[cur.plan];
+  document.getElementById('sumIco').innerHTML=m.ico;
+  document.getElementById('sumTitle').innerHTML=m.title;
+  document.getElementById('sumDesc').innerHTML=m.desc;
+  document.getElementById('sumSub').innerHTML=m.sub;
+  document.getElementById('sumTot').innerHTML=m.tot;
+  document.getElementById('guaranteeTxt').innerHTML=m.guarantee;
+  document.getElementById('payBtn').innerHTML=m.btn;
+  document.getElementById('sumTva').innerHTML='incluse';
+}
+
+plansEl.querySelectorAll('.plan').forEach(p=>{p.onclick=()=>selectPlan(p.dataset.plan);});
+
+// Pré-sélectionner le plan passé en query string (?plan=invest ou ?plan=invest_year)
+const urlPlan=new URLSearchParams(location.search).get('plan');
+if(urlPlan&&meta[urlPlan])selectPlan(urlPlan);
 
 // formatage léger des champs carte
 document.getElementById('card').addEventListener('input',e=>{
