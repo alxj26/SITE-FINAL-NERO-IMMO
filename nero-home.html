@@ -26,7 +26,7 @@
 
   header{border-bottom:1px solid var(--line);background:rgba(8,9,13,.8);backdrop-filter:blur(14px);position:sticky;top:0;z-index:40}
   .hd{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:880px;margin:0 auto;padding:0 24px}
-  .logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em}
+  .logo{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none;color:var(--text)}
   .logo .hex{font-size:21px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .logo small{font-family:var(--body);font-weight:500;font-size:12px;color:var(--muted);margin-left:2px}
   .save-note{font-size:12px;color:var(--muted);font-family:var(--mono)}
@@ -136,7 +136,7 @@
 <body>
 <header>
   <div class="hd">
-    <div class="logo"><span class="hex">&#11041;</span>N&eacute;ro <small>Home</small></div>
+    <a href="index.html" class="logo"><span class="hex">&#11041;</span>N&eacute;ro <small>Home</small></a>
     <div class="save-note" id="saveNote">&nbsp;</div>
   </div>
 </header>
@@ -335,8 +335,8 @@
       <h3>Ton dossier complet t'attend</h3>
       <p>Plan de financement PDF, profil emprunteur, simulations d&eacute;taill&eacute;es &mdash; ou laisse N&eacute;ro n&eacute;gocier ton cr&eacute;dit comme courtier IOBSP.</p>
       <div class="pill-row">
-        <button class="btn btn-primary" onclick="genPDF()">Exporter le dossier PDF &mdash; 29&euro;</button>
-        <button class="btn btn-ghost" onclick="alert('D&eacute;mo : prise de contact courtier N&eacute;ro Pilote (gratuit, r&eacute;mun&eacute;r&eacute; par la banque)')">&Ecirc;tre rappel&eacute; par N&eacute;ro</button>
+        <a href="nero-checkout.html"><button class="btn btn-primary">Exporter le dossier PDF &mdash; 29&euro;</button></a>
+        <a href="nero-pilote.html"><button class="btn btn-ghost">&Ecirc;tre rappel&eacute; par N&eacute;ro</button></a>
       </div>
     </div>
 
@@ -352,6 +352,17 @@
     </div>
   </section>
 </div>
+
+<footer style="border-top:1px solid var(--line);padding:32px 0;margin-top:40px">
+  <div style="max-width:880px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <a href="index.html" style="font-family:var(--display);font-weight:700;font-size:18px;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px"><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">&#11041;</span>N&eacute;ro</a>
+    <div style="display:flex;gap:20px;font-size:13px;color:var(--muted)">
+      <a href="index.html#offres" style="color:var(--muted);text-decoration:none">Offres</a>
+      <a href="nero-pilote.html" style="color:var(--muted);text-decoration:none">N&eacute;ro Pilote</a>
+      <a href="nero-invest.html" style="color:var(--muted);text-decoration:none">N&eacute;ro Invest</a>
+    </div>
+  </div>
+</footer>
 
 <script>
 /* ============ DONNÉES RÉGLEMENTAIRES 2026 ============ */

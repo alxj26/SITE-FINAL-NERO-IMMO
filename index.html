@@ -28,7 +28,7 @@
   .ink::after{content:'';position:absolute;left:-2px;right:-2px;bottom:2px;height:36%;background:var(--grad-soft);border-radius:4px;z-index:-1;transform:skewX(-6deg)}
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(8,9,13,.72);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em;text-decoration:none;color:var(--text)}
   .logo .hex{font-size:23px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;animation:spin 14s linear infinite;display:inline-block}
   @keyframes spin{to{transform:rotate(360deg)}}
   .nav-links{display:flex;gap:32px;font-size:14.5px;color:var(--muted);font-weight:500}
@@ -125,7 +125,7 @@
   .plan ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1}
   .plan li{font-size:13.5px;display:flex;gap:9px;align-items:flex-start;color:var(--text)}
   .plan li .ch{color:var(--sky);flex-shrink:0;margin-top:1px;font-weight:700}
-  .plan .pcta{font-family:var(--display);font-weight:600;font-size:14px;text-align:center;padding:13px;border-radius:11px;border:1px solid var(--line);transition:all .2s;cursor:pointer}
+  .plan .pcta{display:block;font-family:var(--display);font-weight:600;font-size:14px;text-align:center;padding:13px;border-radius:11px;border:1px solid var(--line);transition:all .2s;cursor:pointer;text-decoration:none;color:var(--text)}
   .plan .pcta:hover{border-color:var(--sky);color:var(--sky-bright)}
   .plan.feat .pcta{background:var(--grad);color:#04121c;border-color:transparent}
   .plan.feat .pcta:hover{box-shadow:0 10px 28px rgba(56,189,248,.34);color:#04121c}
@@ -163,7 +163,7 @@
 <body>
 <nav>
   <div class="wrap nav-in">
-    <div class="logo"><span class="hex">&#11041;</span>N&eacute;ro</div>
+    <a href="index.html" class="logo"><span class="hex">&#11041;</span>N&eacute;ro</a>
     <div class="nav-links">
       <a href="#fonctionnement">Fonctionnement</a>
       <a href="#courtier">Le courtier</a>
@@ -274,7 +274,7 @@
           <li><span class="ch">&#10003;</span>Verdict de faisabilit&eacute;</li>
           <li><span class="ch">&#10003;</span>Estimation mensualit&eacute;</li>
         </ul>
-        <div class="pcta">Commencer</div>
+        <a href="#simulateur" class="pcta">Commencer</a>
       </div>
       <div class="plan feat reveal">
         <div class="pn">N&eacute;ro Home</div>
@@ -286,7 +286,7 @@
           <li><span class="ch">&#10003;</span>Checklist des pi&egrave;ces</li>
           <li><span class="ch">&#10003;</span>Comparateur de sc&eacute;narios + PTZ</li>
         </ul>
-        <div class="pcta">Choisir Home</div>
+        <a href="nero-home.html" class="pcta">Choisir Home</a>
       </div>
       <div class="plan reveal">
         <div class="pn">N&eacute;ro Pilote</div>
@@ -298,7 +298,7 @@
           <li><span class="ch">&#10003;</span>Accompagnement jusqu'&agrave; l'offre</li>
           <li><span class="ch">&#10003;</span>R&eacute;mun&eacute;r&eacute; par la banque</li>
         </ul>
-        <div class="pcta">&Ecirc;tre rappel&eacute;</div>
+        <a href="nero-pilote.html" class="pcta">&Ecirc;tre rappel&eacute;</a>
       </div>
       <div class="plan reveal">
         <div class="pn">N&eacute;ro Invest</div>
@@ -309,7 +309,7 @@
           <li><span class="ch">&#10003;</span>Comparateur fiscal LMNP/SCI</li>
           <li><span class="ch">&#10003;</span>Multi-projets &amp; cashflow 25 ans</li>
         </ul>
-        <div class="pcta">Choisir Invest</div>
+        <a href="nero-invest.html" class="pcta">Choisir Invest</a>
       </div>
     </div>
   </div>
@@ -344,7 +344,7 @@
 </section>
 <footer>
   <div class="wrap foot-in">
-    <div class="logo"><span class="hex">&#11041;</span>N&eacute;ro</div>
+    <a href="index.html" class="logo"><span class="hex">&#11041;</span>N&eacute;ro</a>
     <div class="foot-legal">
       <b>N&eacute;ro</b> &mdash; service con&ccedil;u et op&eacute;r&eacute; par un professionnel titulaire des habilitations IOBSP (courtage en op&eacute;rations de banque), carte professionnelle T (transactions immobili&egrave;res) et de la certification AMF, dipl&ocirc;m&eacute; d'un Master en gestion de patrimoine.<br><br>
       Mentions r&eacute;glementaires (n&deg; ORIAS, autorit&eacute; de contr&ocirc;le ACPR, m&eacute;diateur, carte pro et garantie financi&egrave;re) &agrave; afficher avant mise en ligne. Le diagnostic gratuit fournit une information indicative et ne constitue pas un conseil personnalis&eacute; au sens r&eacute;glementaire.
